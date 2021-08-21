@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { listArticles } from "../actions/articlesActions";
+import SearchIcon from "@material-ui/icons/Search";
+import { useHistory } from "react-router-dom";
 
 const SearchArticle = () => {
   const dispatch = useDispatch();
-  const [type, setType] = useState("everything");
+  const [keyword, setKeyword] = useState("sports");
   // // const dispatch = useDispatch();
   // const articleList = useSelector((state) => state.articleList);
   // const { loading, error, articles } = articleList;
@@ -14,21 +16,27 @@ const SearchArticle = () => {
   //     dispatch(listArticles("everything"));
   //   }
   // }, [dispatch, articles]);
-  const handleSubmit = (e) => {
+  const history = useHistory();
+  const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(listArticles(type));
+    history.push(`/search/${keyword}`);
+    // dispatch(listArticles(keyword));
   };
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <form onSubmit={submitHandler} className="search-box">
+      <div className="search-box-input">
         <input
-          onChange={(e) => setType(e.target.value)}
+          onChange={(e) => setKeyword(e.target.value)}
           type="text"
           placeholder="search .."
         />
-        <button type="submit">search</button>
-      </form>
-    </div>
+        <div className="search-box-button">
+          <button type="submit">
+            <SearchIcon />
+          </button>
+        </div>
+      </div>
+    </form>
   );
 };
 

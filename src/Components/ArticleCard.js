@@ -8,7 +8,7 @@ import { Person } from "@material-ui/icons";
 
 const ArticleCard = ({ article }) => {
   return (
-    <div className="card p-3 rounded">
+    <div className="card p-6 rounded">
       <div className="card-body d-flex flex-column">
         <h2 className="card-title">{article.headline.main}</h2>
         <h4>{article.abstract}</h4>

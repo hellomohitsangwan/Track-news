@@ -4,16 +4,23 @@ import { useDispatch, useSelector } from "react-redux";
 import Loader from "./Components/Loader";
 import ArticleCard from "./Components/ArticleCard";
 import ArticlesScreen from "./Screens/ArticlesScreen";
+import { Container } from "react-bootstrap";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import HomeScreen from "./Screens/HomeScreen";
+
 function App() {
   const articleList = useSelector((state) => state.articleList);
   const { loading, error, articles } = articleList;
 
   return (
-    <div className="App">
-      <SearchArticle />
-      {loading && <Loader />}
-      <ArticlesScreen />
-    </div>
+    <Router>
+      <div className="App">
+        <Container>
+          <Route path="/search/:name" component={ArticlesScreen} />
+          <Route path="/" component={HomeScreen} />
+        </Container>
+      </div>
+    </Router>
   );
 }
 

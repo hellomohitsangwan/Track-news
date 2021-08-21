@@ -26,12 +26,15 @@
   100% {
     transform: rotate(360deg);
   }
-}.rounded {
+}
+.rounded {
   border-radius: 0.25rem !important;
 }
 
 .card {
+  padding: 2rem;
   height: 100%;
+  border: 1px solid grey;
 }
 
 .card-title a {
@@ -70,4 +73,31 @@
   font-size: 0.85rem;
   color: grey;
   margin-left: 0.5rem;
+}
+.search-box-input {
+  display: flex;
+  align-items: center;
+  border: 1px solid lightgray;
+  height: 30px;
+  padding: 8px 8px;
+  border-radius: 16px;
+  width: 40vw;
+  /* margin: 0 auto; simple trick to center the element */
+  /* margin-top: 40px; */
+  /* max-width: 560px; */
+  /* flex-direction: row; */
+}
+.search-box-input > input {
+  width: 16vw;
+  flex: 1;
+  padding: 10px 20px;
+  font-size: medium;
+  border: none;
+}
+.search-box-input > input:focus {
+  outline-width: 0ch;
+}
+.search-box-button > button {
+  background-color: transparent;
+  border: none;
 }

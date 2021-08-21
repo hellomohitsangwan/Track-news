@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { listArticles } from "../actions/articlesActions";
 import ArticleCard from "../Components/ArticleCard";
+import Loader from "../Components/Loader";
+import SearchArticle from "../Components/SearchArticle";
 
 const ArticlesScreen = () => {
   const dispatch = useDispatch();
@@ -15,6 +17,8 @@ const ArticlesScreen = () => {
 
   return (
     <div>
+      <SearchArticle />
+      {loading && <Loader />}
       {articles.map((article) => {
         return <ArticleCard article={article} />;
       })}
