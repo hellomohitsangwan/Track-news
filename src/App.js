@@ -7,6 +7,7 @@ import ArticlesScreen from "./Screens/ArticlesScreen";
 import { Container } from "react-bootstrap";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import HomeScreen from "./Screens/HomeScreen";
+import Header from "./Components/Header";
 
 function App() {
   const articleList = useSelector((state) => state.articleList);
@@ -14,10 +15,11 @@ function App() {
 
   return (
     <Router>
+      <Header />
       <div className="App">
         <Container>
-          <Route path="/search/:name" component={ArticlesScreen} />
-          <Route path="/" component={HomeScreen} />
+          <Route path="/search/:name" exact component={ArticlesScreen} />
+          <Route path="/" exact component={HomeScreen} />
         </Container>
       </div>
     </Router>

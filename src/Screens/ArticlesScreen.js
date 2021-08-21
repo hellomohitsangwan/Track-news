@@ -17,7 +17,6 @@ const ArticlesScreen = () => {
 
   return (
     <div>
-      <SearchArticle />
       {loading && <Loader />}
       {articles.map((article) => {
         return <ArticleCard article={article} />;

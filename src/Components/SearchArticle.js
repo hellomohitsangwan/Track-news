@@ -20,7 +20,7 @@ const SearchArticle = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     history.push(`/search/${keyword}`);
-    // dispatch(listArticles(keyword));
+    dispatch(listArticles(keyword));
   };
   return (
     <form onSubmit={submitHandler} className="search-box">
