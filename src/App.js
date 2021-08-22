@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import HomeScreen from "./Screens/HomeScreen";
 import Header from "./Components/Header";
 import { grey } from "@material-ui/core/colors";
+import Footer from "./Components/Footer";
 
 function App() {
   const articleList = useSelector((state) => state.articleList);
@@ -23,8 +24,10 @@ function App() {
         <Route path="/" exact component={HomeScreen} />
         {/* </Container> */}
       </div>
+      <Footer />
     </Router>
   );
 }
 
 export default App;
+

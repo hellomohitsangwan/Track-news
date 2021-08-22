@@ -21,7 +21,11 @@ export const listArticles = (type) => async (dispatch) => {
       });
       return;
     }
-    dispatch({ type: ARTICLE_LIST_SUCCESS, payload: res.data.response.docs });
+    dispatch({
+      type: ARTICLE_LIST_SUCCESS,
+      payload: res.data.response.docs,
+      typee: type,
+    });
   } catch (err) {
     dispatch({
       type: ARTICLE_LIST_FAIL,

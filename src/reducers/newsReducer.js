@@ -12,7 +12,11 @@ export const articleListReducer = (state = { articles: [] }, action) => {
     case ARTICLE_LIST_REQUEST:
       return { loading: true, articles: [] };
     case ARTICLE_LIST_SUCCESS:
-      return { loading: false, articles: action.payload };
+      return {
+        loading: false,
+        articles: action.payload,
+        searchType: action.typee,
+      };
     case ARTICLE_LIST_FAIL:
       return { loading: false, error: action.payload };
     default:

@@ -6,9 +6,11 @@ const PopularArticlesCard = ({ article }) => {
   return (
     <div className="card p-4 rounded">
       {article.media[0] ? (
+        // eslint-disable-next-line jsx-a11y/img-redundant-alt
         <img
           className="card-img-top img-fluid"
           src={article?.media[0]["media-metadata"][2]?.url}
+          alt="image"
         ></img>
       ) : (
         ""

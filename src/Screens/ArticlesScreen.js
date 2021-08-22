@@ -9,34 +9,40 @@ import "./screens.css";
 const ArticlesScreen = () => {
   const dispatch = useDispatch();
   const articleList = useSelector((state) => state.articleList);
-  const { loading, error, articles } = articleList;
+  const { loading, error, articles, searchType } = articleList;
   useEffect(() => {
     if (articles.length === 0) {
-      dispatch(listArticles("everything"));
+      dispatch(listArticles("sports"));
     }
   }, [dispatch]);
 
   return (
-    <div className="container">
-      <div className="row-up"></div>
+    <div>
+      <div className="wrapper-background">
+        <h3 className="text-center">
+          You are currently viewing articles on {searchType}.
+        </h3>
+      </div>
       {loading && <Loader />}
       {error && <Message children={error} variant="danger" />}
-      <Row className="mt-4">
-        {articles.map((article, id) => {
-          return (
-            <Col
-              className="mb-4"
-              key={article.id}
-              sm={12}
-              md={12}
-              lg={6}
-              xl={6}
-            >
-              <ArticleCard id={id} article={article} />
-            </Col>
-          );
-        })}
-      </Row>
+      <div className="container">
+        <Row className="mt-4">
+          {articles.map((article, id) => {
+            return (
+              <Col
+                className="mb-4"
+                key={article.id}
+                sm={12}
+                md={12}
+                lg={6}
+                xl={6}
+              >
+                <ArticleCard id={id} article={article} />
+              </Col>
+            );
+          })}
+        </Row>
+      </div>
     </div>
   );
 };

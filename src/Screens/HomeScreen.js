@@ -30,7 +30,7 @@ const HomeScreen = () => {
   return (
     <div>
       <div className="wrapper-background">
-        <h3>
+        <h3 className="text-center">
           You are currently viewing most {type} articles of {filter}.
         </h3>
       </div>

@@ -1,8 +1,7 @@
 /* home screen */
 /* filter buttons */
 .btn {
-  background-color: #eb7d56 !important;
-  border: 1 px solid #eb7d56 !important;
+  background-color: #2a9d8f !important;
   padding: 4px;
   margin: 0;
   border-radius: 16px;
@@ -10,11 +9,18 @@
 /* background */
 .wrapper-background {
   background-image: url("https://previews.123rf.com/images/mangpor2004/mangpor20041704/mangpor2004170400161/77115175-blurred-background-blur-store-with-bokeh-light-background-business-banner-black-and-white-tone.jpg");
-  height: 9.6rem !important;
-  width: 100%;
+
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  height: 6.4rem !important;
+  width: 100%;
+  /* background: rgb(42, 157, 143);
+  background: linear-gradient(
+    82deg,
+    rgba(42, 157, 143, 1) 32%,
+    rgba(231, 111, 81, 1) 88%
+  ); */
 }
 .wrapper-background {
   display: flex;
@@ -24,6 +30,11 @@
 
 /* article screen */
 .row-up {
-  background-color: #d3d3d3;
+  background: rgb(42, 157, 143);
+  background: linear-gradient(
+    82deg,
+    rgba(42, 157, 143, 1) 8%,
+    rgba(231, 111, 81, 1) 88%
+  );
   height: 2rem;
 }
