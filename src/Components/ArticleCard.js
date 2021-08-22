@@ -26,8 +26,13 @@ const ArticleCard = ({ article }) => {
             </div>
             <div>
               {" "}
-              <PersonIcon />
-              <span className="m-2">{article.byline.original}</span>
+              {article.byline.original && (
+                <>
+                  {" "}
+                  <PersonIcon />
+                  <span className="m-2">{article.byline.original}</span>
+                </>
+              )}
             </div>
           </div>
           <div className="article-row__right">

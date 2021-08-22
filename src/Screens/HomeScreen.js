@@ -1,11 +1,10 @@
 import { MenuItem } from "@material-ui/core";
+import { Message } from "@material-ui/icons";
 import React, { useEffect, useState } from "react";
-import { Col, Dropdown, DropdownButton, Row } from "react-bootstrap";
-import DropdownItem from "react-bootstrap/esm/DropdownItem";
+import { Col, DropdownButton, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { listPopularArticles } from "../actions/articlesActions";
 import Loader from "../Components/Loader";
-import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import PopularArticlesCard from "../Components/PopularArticlesCard";
 import "./screens.css";
 const HomeScreen = () => {
@@ -24,7 +23,7 @@ const HomeScreen = () => {
     dispatch(listPopularArticles(type, latency));
   }, [dispatch, latency, type]);
   useEffect(() => {
-    //don't depend on anything , it just dispatch everytime when the app first load
+    //don't depend on anything , it just dispatch listPopularArticles() everytime when the app first load
     dispatch(listPopularArticles(type, latency));
   }, [dispatch]);
 
@@ -105,25 +104,25 @@ const HomeScreen = () => {
           </div>
         </div>
         {loading && <Loader />}
-        <Row>
-          {/* {articles.map((article) => {
-          return <PopularArticlesCard article={article} />;
-        })} */}{" "}
-          {articles.map((article) => {
-            return (
-              <Col
-                className="mb-4"
-                key={article.id}
-                sm={12}
-                md={12}
-                lg={6}
-                xl={6}
-              >
-                <PopularArticlesCard article={article} />
-              </Col>
-            );
-          })}
-        </Row>
+        {error && <Message children={error} variant="danger" />}
+        {!error && (
+          <Row>
+            {articles.map((article, id) => {
+              return (
+                <Col
+                  className="mb-4"
+                  key={article.id}
+                  sm={12}
+                  md={12}
+                  lg={6}
+                  xl={6}
+                >
+                  <PopularArticlesCard id={id} article={article} />
+                </Col>
+              );
+            })}
+          </Row>
+        )}
       </div>
     </div>
   );

@@ -1,35 +1,17 @@
+/* home screen */
+/* filter buttons */
 .btn {
-  /* display: inline-block;
-  font-weight: 560;
-  /* font-size: 40px; */
-  /* text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  border: 1px solid transparent;
-  padding: 0.12rem 0.48rem;
-  font-size: 1.2rem;
-  line-height: 1.5;
-  border-radius: 0.25rem;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, */
-  /* border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; */
-  background-color: #eb7d56;
-  border: 1 px solid #eb7d56;
+  background-color: #eb7d56 !important;
+  border: 1 px solid #eb7d56 !important;
+  padding: 4px;
+  margin: 0;
+  border-radius: 16px;
 }
-/* .container {
-  width: 80vw;
-  margin-right: auto;
-  margin-left: auto;
-} */
+/* background */
 .wrapper-background {
   background-image: url("https://previews.123rf.com/images/mangpor2004/mangpor20041704/mangpor2004170400161/77115175-blurred-background-blur-store-with-bokeh-light-background-business-banner-black-and-white-tone.jpg");
   height: 9.6rem !important;
   width: 100%;
-  /* background-repeat: no-repeat;
-  background-size: 1600px 600px; */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -38,4 +20,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* article screen */
+.row-up {
+  background-color: #d3d3d3;
+  height: 2rem;
 }

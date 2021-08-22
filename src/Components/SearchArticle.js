@@ -8,14 +8,7 @@ import { useHistory } from "react-router-dom";
 const SearchArticle = () => {
   const dispatch = useDispatch();
   const [keyword, setKeyword] = useState("sports");
-  // // const dispatch = useDispatch();
-  // const articleList = useSelector((state) => state.articleList);
-  // const { loading, error, articles } = articleList;
-  // useEffect(() => {
-  //   if (articles.length === 0) {
-  //     dispatch(listArticles("everything"));
-  //   }
-  // }, [dispatch, articles]);
+
   const history = useHistory();
   const submitHandler = (e) => {
     e.preventDefault();

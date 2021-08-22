@@ -1,10 +1,10 @@
+import { Message } from "@material-ui/icons";
 import React, { useEffect } from "react";
 import { Col, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { listArticles } from "../actions/articlesActions";
 import ArticleCard from "../Components/ArticleCard";
 import Loader from "../Components/Loader";
-import SearchArticle from "../Components/SearchArticle";
 import "./screens.css";
 const ArticlesScreen = () => {
   const dispatch = useDispatch();
@@ -20,8 +20,9 @@ const ArticlesScreen = () => {
     <div className="container">
       <div className="row-up"></div>
       {loading && <Loader />}
+      {error && <Message children={error} variant="danger" />}
       <Row className="mt-4">
-        {articles.map((article) => {
+        {articles.map((article, id) => {
           return (
             <Col
               className="mb-4"
@@ -31,7 +32,7 @@ const ArticlesScreen = () => {
               lg={6}
               xl={6}
             >
-              <ArticleCard article={article} />
+              <ArticleCard id={id} article={article} />
             </Col>
           );
         })}
