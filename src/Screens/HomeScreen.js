@@ -31,11 +31,20 @@ const HomeScreen = () => {
   return (
     <div>
       <div className="wrapper-background">
-        <div className="wrapper container">
-          <div className="wrapper-left">
+        <h3>
+          You are currently viewing most {type} articles of {filter}.
+        </h3>
+      </div>
+
+      <div className="container mt-4">
+        <div className=" d-flex flex-row-reverse m-4">
+          <div className=" mx-2">
             {" "}
-            <h4 className="wrapper-left-text">Select articles type</h4>
-            <DropdownButton className="dropdown-button btn " title={type}>
+            <DropdownButton
+              key="Success"
+              className="dropdown-button btn"
+              title={type}
+            >
               <MenuItem
                 className="dropdown-menuitem"
                 onClick={() => {
@@ -60,15 +69,10 @@ const HomeScreen = () => {
               >
                 Most Viewed
               </MenuItem>
-            </DropdownButton>
+            </DropdownButton>{" "}
           </div>
-          <div className="wrapper-middle">
-            <h3 className="wrapper-middle-text">
-              You are currently viewing most {type} articles of {filter}.
-            </h3>
-          </div>
-          <div className="wrapper-right">
-            <h4 className="wrapper-right-text">Select articles period</h4>
+          <div className=" mx-2">
+            {" "}
             <DropdownButton className="dropdown-button btn " title={filter}>
               <MenuItem
                 className="dropdown-menuitem"
@@ -100,9 +104,6 @@ const HomeScreen = () => {
             </DropdownButton>
           </div>
         </div>
-      </div>
-
-      <div className="container mt-4">
         {loading && <Loader />}
         <Row>
           {/* {articles.map((article) => {
