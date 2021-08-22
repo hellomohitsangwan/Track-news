@@ -1,4 +1,4 @@
-#Track news
+# Track news
 
 > News fetching webapp
 
@@ -16,11 +16,21 @@ This project is given as a task to me that i made in 2 days from scratch
 
 - Single Page web-appilcation
 
+## technologies/framework used
+
+- React JS
+- Redux
+- react-bootstrap
+
+## Note on APIs Keys usage
+
+Use my API keys for testing purpose onle.please do not share them on any public platform .
+
 ## Usage
 
 ### secrets file
 
-Create a secrets.js file in the src folder
+Replace your APIs keys with mine in the secrets.js file.
 
 ```
 export const ARTICLE_SEARCH_API_KEY = YOUR_ARTICLE_SEARCH_API_KEY;
@@ -39,5 +49,3 @@ npm i
 ```
 npm start
 ```
-
-le.

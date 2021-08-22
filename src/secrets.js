@@ -1,0 +1,2 @@
+export const ARTICLE_SEARCH_API_KEY = "GB0FtUXOyOeiavbSe2GbQShix50J3fdQ";
+export const POPULAR_ARTICLE_API_KEY = "LywcfhREzeBJYc0LXZGBugRoRBQqDRud";
