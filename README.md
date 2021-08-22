@@ -22,6 +22,12 @@ This project is given as a task to me that i made in 2 days from scratch
 - Redux
 - react-bootstrap
 
+## Project Status
+
+Success,web-app testing link is given below
+<br/>
+<a href="https://tracknews.netlify.app/" target="_blank">Link</a>
+
 ## Note on APIs Keys usage
 
 Use my API keys for testing purpose only.please do not share them on any public platform .
