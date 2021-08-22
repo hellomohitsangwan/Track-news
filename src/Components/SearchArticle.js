@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { listArticles } from "../actions/articlesActions";
 import SearchIcon from "@material-ui/icons/Search";
@@ -22,7 +21,7 @@ const SearchArticle = () => {
         <input
           onChange={(e) => setKeyword(e.target.value)}
           type="text"
-          placeholder={searchType}
+          placeholder={searchType ? searchType : "Search articles"}
         />
         <div className="search-box-buttonp">
           <button type="submit">

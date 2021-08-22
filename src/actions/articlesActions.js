@@ -1,4 +1,5 @@
 import axios from "axios";
+import { ARTICLE_SEARCH_API_KEY, POPULAR_ARTICLE_API_KEY } from "../secrets";
 import {
   ARTICLE_LIST_FAIL,
   ARTICLE_LIST_REQUEST,
@@ -12,7 +13,7 @@ export const listArticles = (type) => async (dispatch) => {
   try {
     dispatch({ type: ARTICLE_LIST_REQUEST });
     const res = await axios.get(
-      `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${type}&api-key=GB0FtUXOyOeiavbSe2GbQShix50J3fdQ`
+      `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${type}&api-key=${ARTICLE_SEARCH_API_KEY}`
     );
     if (res.status === 500) {
       dispatch({
@@ -43,7 +44,7 @@ export const listPopularArticles = (type, latency) => async (dispatch) => {
   try {
     dispatch({ type: POPULAR_ARTICLE_LIST_REQUEST });
     const res = await axios.get(
-      `https://api.nytimes.com/svc/mostpopular/v2/${type}/${latency}.json?api-key=LywcfhREzeBJYc0LXZGBugRoRBQqDRud`
+      `https://api.nytimes.com/svc/mostpopular/v2/${type}/${latency}.json?api-key=${POPULAR_ARTICLE_API_KEY}`
     );
     if (res.status === 500) {
       dispatch({
