@@ -8,7 +8,8 @@ import { useHistory } from "react-router-dom";
 const SearchArticle = () => {
   const dispatch = useDispatch();
   const [keyword, setKeyword] = useState("sports");
-
+  const articleList = useSelector((state) => state.articleList);
+  const { searchType } = articleList;
   const history = useHistory();
   const submitHandler = (e) => {
     e.preventDefault();
@@ -21,7 +22,7 @@ const SearchArticle = () => {
         <input
           onChange={(e) => setKeyword(e.target.value)}
           type="text"
-          placeholder="Serch news (eg : sports.. .) "
+          placeholder={searchType}
         />
         <div className="search-box-buttonp">
           <button type="submit">
