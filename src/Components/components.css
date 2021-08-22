@@ -77,7 +77,7 @@
 .search-box-inputp {
   display: flex;
   align-items: center;
-  border: 1px solid lightgray;
+  /* border: 1px solid lightgray; */
   height: 30px;
   padding: 8px 8px;
   border-radius: 20px;
@@ -127,7 +127,7 @@
   font-weight: bold;
 }
 .card {
-  height: fit-content;
+  /* height: fit-content; */
 }
 .card-img-top {
   width: 100%;

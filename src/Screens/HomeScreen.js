@@ -31,7 +31,7 @@ const HomeScreen = () => {
   return (
     <div>
       <div className="wrapper-background">
-        <div className="wrapper">
+        <div className="wrapper container">
           <div className="wrapper-left">
             {" "}
             <h4 className="wrapper-left-text">Select articles type</h4>

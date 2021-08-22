@@ -28,7 +28,7 @@ const SearchArticle = () => {
         <input
           onChange={(e) => setKeyword(e.target.value)}
           type="text"
-          placeholder="search .."
+          placeholder="Serch news (eg : sports.. .) "
         />
         <div className="search-box-buttonp">
           <button type="submit">
