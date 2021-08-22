@@ -1,7 +1,4 @@
 import React from "react";
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { listArticles } from "../actions/articlesActions";
 import PersonIcon from "@material-ui/icons/Person";
 import DateRangeIcon from "@material-ui/icons/DateRange";
 import "./components.css";

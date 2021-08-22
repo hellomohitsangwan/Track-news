@@ -15,12 +15,6 @@
   background-size: cover;
   height: 6.4rem !important;
   width: 100%;
-  /* background: rgb(42, 157, 143);
-  background: linear-gradient(
-    82deg,
-    rgba(42, 157, 143, 1) 32%,
-    rgba(231, 111, 81, 1) 88%
-  ); */
 }
 .wrapper-background {
   display: flex;
