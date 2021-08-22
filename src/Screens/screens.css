@@ -1,8 +1,8 @@
 .btn {
-  display: inline-block;
+  /* display: inline-block;
   font-weight: 560;
   /* font-size: 40px; */
-  text-align: center;
+  /* text-align: center;
   white-space: nowrap;
   vertical-align: middle;
   -webkit-user-select: none;
@@ -14,9 +14,10 @@
   font-size: 1.2rem;
   line-height: 1.5;
   border-radius: 0.25rem;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, */
+  /* border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; */
   background-color: #eb7d56;
+  border: 1 px solid #eb7d56;
 }
 /* .container {
   width: 80vw;

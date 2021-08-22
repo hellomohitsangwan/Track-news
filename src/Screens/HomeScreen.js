@@ -1,11 +1,12 @@
 import { MenuItem } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
-import { Dropdown, DropdownButton } from "react-bootstrap";
+import { Col, Dropdown, DropdownButton, Row } from "react-bootstrap";
 import DropdownItem from "react-bootstrap/esm/DropdownItem";
 import { useDispatch, useSelector } from "react-redux";
 import { listPopularArticles } from "../actions/articlesActions";
 import Loader from "../Components/Loader";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
+import PopularArticlesCard from "../Components/PopularArticlesCard";
 import "./screens.css";
 const HomeScreen = () => {
   const [latency, setLatency] = useState(1);
@@ -22,6 +23,11 @@ const HomeScreen = () => {
   useEffect(() => {
     dispatch(listPopularArticles(type, latency));
   }, [dispatch, latency, type]);
+  useEffect(() => {
+    //don't depend on anything , it just dispatch everytime when the app first load
+    dispatch(listPopularArticles(type, latency));
+  }, [dispatch]);
+
   return (
     <div>
       <div className="wrapper-background">
@@ -96,7 +102,28 @@ const HomeScreen = () => {
         </div>
       </div>
 
-      <div className="container">{loading && <Loader />}</div>
+      <div className="container mt-4">
+        {loading && <Loader />}
+        <Row>
+          {/* {articles.map((article) => {
+          return <PopularArticlesCard article={article} />;
+        })} */}{" "}
+          {articles.map((article) => {
+            return (
+              <Col
+                className="mb-4"
+                key={article.id}
+                sm={12}
+                md={12}
+                lg={6}
+                xl={6}
+              >
+                <PopularArticlesCard article={article} />
+              </Col>
+            );
+          })}
+        </Row>
+      </div>
     </div>
   );
 };

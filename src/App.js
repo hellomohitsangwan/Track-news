@@ -8,6 +8,7 @@ import { Container } from "react-bootstrap";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import HomeScreen from "./Screens/HomeScreen";
 import Header from "./Components/Header";
+import { grey } from "@material-ui/core/colors";
 
 function App() {
   const articleList = useSelector((state) => state.articleList);
@@ -17,10 +18,10 @@ function App() {
     <Router>
       <Header />
       <div className="App">
-        <Container>
-          <Route path="/search/:name" exact component={ArticlesScreen} />
-          <Route path="/" exact component={HomeScreen} />
-        </Container>
+        {/* <Container> */}
+        <Route path="/search/:name" exact component={ArticlesScreen} />
+        <Route path="/" exact component={HomeScreen} />
+        {/* </Container> */}
       </div>
     </Router>
   );

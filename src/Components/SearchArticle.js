@@ -23,14 +23,14 @@ const SearchArticle = () => {
     dispatch(listArticles(keyword));
   };
   return (
-    <form onSubmit={submitHandler} className="search-box">
-      <div className="search-box-input">
+    <form onSubmit={submitHandler} className="search-boxp">
+      <div className="search-box-inputp">
         <input
           onChange={(e) => setKeyword(e.target.value)}
           type="text"
           placeholder="search .."
         />
-        <div className="search-box-button">
+        <div className="search-box-buttonp">
           <button type="submit">
             <SearchIcon />
           </button>
