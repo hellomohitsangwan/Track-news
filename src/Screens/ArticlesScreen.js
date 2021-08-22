@@ -6,13 +6,13 @@ import { listArticles } from "../actions/articlesActions";
 import ArticleCard from "../Components/ArticleCard";
 import Loader from "../Components/Loader";
 import "./screens.css";
-const ArticlesScreen = () => {
+const ArticlesScreen = ({ match }) => {
   const dispatch = useDispatch();
   const articleList = useSelector((state) => state.articleList);
   const { loading, error, articles, searchType } = articleList;
   useEffect(() => {
-    if (articles.length === 0) {
-      dispatch(listArticles("sports"));
+    if (articles.length === 0 && !loading) {
+      dispatch(listArticles(match.params.name));
     }
   }, [dispatch]);
 
